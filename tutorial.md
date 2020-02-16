@@ -26,3 +26,8 @@ Após instalar o Bootstrap 4.x no projeto eu executei o comando `php artisan ser
 
 Na terceira aula eu tive que adicionar uma meta tag no arquivo de layout para incluir o token CSRF, que é um token para garantir a segurança quando eu estiver trabalhando com formulários.
 
+## Aula 4
+
+Nessa aula nós adicionamos mais código HTML no arquivo `index.blade.php`
+
+Nós criamos um `.jumbotron` e adicionamos dois *cards* nele. Futuramente um irá redirecionar o usuário para o cadastro de produtos e o outro irá redirecionar o usuário para o cadastro de categorias.
