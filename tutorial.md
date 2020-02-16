@@ -22,3 +22,7 @@ npm install && npm run dev
 
 Após instalar o Bootstrap 4.x no projeto eu executei o comando `php artisan serve` na raiz do projeto para executar o programa.
 
+## Aula 3
+
+Na terceira aula eu tive que adicionar uma meta tag no arquivo de layout para incluir o token CSRF, que é um token para garantir a segurança quando eu estiver trabalhando com formulários.
+
