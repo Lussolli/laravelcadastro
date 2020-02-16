@@ -22,12 +22,20 @@ npm install && npm run dev
 
 Após instalar o Bootstrap 4.x no projeto eu executei o comando `php artisan serve` na raiz do projeto para executar o programa.
 
-## Aula 3
+## Terceira aula
 
 Na terceira aula eu tive que adicionar uma meta tag no arquivo de layout para incluir o token CSRF, que é um token para garantir a segurança quando eu estiver trabalhando com formulários.
 
-## Aula 4
+## Quarta aula
 
 Nessa aula nós adicionamos mais código HTML no arquivo `index.blade.php`
 
 Nós criamos um `.jumbotron` e adicionamos dois *cards* nele. Futuramente um irá redirecionar o usuário para o cadastro de produtos e o outro irá redirecionar o usuário para o cadastro de categorias.
+
+## Quinta aula
+
+Durante a quinta aula eu componentizei o menu de navegação da aplicação.
+
+Dentro da pasta de `views` foi criada uma nova pasta chamada de `components` que contém um arquivo chamado de `navbar.blade.php`
+
+Por enquanto esse arquivo está sendo utilizado pelo `app.blade.php` para apresentar o menu de navegação.
