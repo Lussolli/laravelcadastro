@@ -39,3 +39,18 @@ Durante a quinta aula eu componentizei o menu de navegação da aplicação.
 Dentro da pasta de `views` foi criada uma nova pasta chamada de `components` que contém um arquivo chamado de `navbar.blade.php`
 
 Por enquanto esse arquivo está sendo utilizado pelo `app.blade.php` para apresentar o menu de navegação.
+
+# Sexta aula
+
+Durante essa aula nós utilizamos os comandos abaixo para criar as entidades e as *migrations* de **Categorias** e de **Produtos** com os comandos abaixo:
+
+``` bash
+php artisan make:model Categoria -m
+php artisan make:model Produto -m
+```
+
+Na migration de categorias eu coloquei uma nova coluna para o nome da mesma. E na migration de produtos eu adicionei novas colunas para o nome, quantidade em estoque, preço e id da categoria.
+
+Depois eu abri uma nova instância do terminal no VS Code e me conectei no MariaDB. Criei uma base de dados com o nome de **laravelcadastro** e alterei o arquivo `.env` para informar os dados de conexão com o banco de dados.
+
+Por fim eu executei as migrations com o comando `php artisan migrate`
