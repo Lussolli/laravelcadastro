@@ -54,3 +54,15 @@ Na migration de categorias eu coloquei uma nova coluna para o nome da mesma. E n
 Depois eu abri uma nova instância do terminal no VS Code e me conectei no MariaDB. Criei uma base de dados com o nome de **laravelcadastro** e alterei o arquivo `.env` para informar os dados de conexão com o banco de dados.
 
 Por fim eu executei as migrations com o comando `php artisan migrate`
+
+# Sétima aula
+
+Na sétima aula eu comecei a criar os meus controladores.
+
+Utilizei o comando `php artisan make:controller ControladorProduto --resource` e `php artisan make:controller ControladorCategoria --resource`
+
+Ao final dos comandos foi utilizado o `-- resource` para o Laravel criar os controladores com todos os métodos por padrão.
+
+Eu tive que abrir o arquivo de rotas e criar duas novas rotas para as páginas de categorias e de produtos.
+
+Os métodos de `index` já estão retornando suas views.
