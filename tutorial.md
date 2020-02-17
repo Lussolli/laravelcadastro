@@ -12,7 +12,7 @@ Na segunda aula eu crie o arquivo de layout na pasta `views/layouts`. O nome do 
 
 Nessa aula nós também criamos um arquivo chamado de `index.blade.php` na pasta `views` e, por fim, alteramos o arquivo de rota (`routes/web.php`) para redirecionar o usuário para a nova *view index*.
 
-Eu estou utilizando o Laravel 6.0, por essa razão eu precisei fazer executar esses comandos para conseguir utilizar o framework front-end Bootstrap:
+Eu estou utilizando o Laravel 6.0, por essa razão eu precisei executar esses comandos para conseguir utilizar o framework front-end Bootstrap:
 
 ```
 composer require laravel/ui
@@ -40,7 +40,7 @@ Dentro da pasta de `views` foi criada uma nova pasta chamada de `components` que
 
 Por enquanto esse arquivo está sendo utilizado pelo `app.blade.php` para apresentar o menu de navegação.
 
-# Sexta aula
+## Sexta aula
 
 Durante essa aula nós utilizamos os comandos abaixo para criar as entidades e as *migrations* de **Categorias** e de **Produtos** com os comandos abaixo:
 
@@ -55,7 +55,7 @@ Depois eu abri uma nova instância do terminal no VS Code e me conectei no Maria
 
 Por fim eu executei as migrations com o comando `php artisan migrate`
 
-# Sétima aula
+## Sétima aula
 
 Na sétima aula eu comecei a criar os meus controladores.
 
@@ -67,6 +67,6 @@ Eu tive que abrir o arquivo de rotas e criar duas novas rotas para as páginas d
 
 Os métodos de `index` já estão retornando suas views.
 
-# Oitava aula
+## Oitava aula
 
 Nessa aula nós passamos um parâmetro para o componente de navegação dizendo em qual página o usuário está.
