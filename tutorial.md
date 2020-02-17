@@ -66,3 +66,7 @@ Ao final dos comandos foi utilizado o `-- resource` para o Laravel criar os cont
 Eu tive que abrir o arquivo de rotas e criar duas novas rotas para as páginas de categorias e de produtos.
 
 Os métodos de `index` já estão retornando suas views.
+
+# Oitava aula
+
+Nessa aula nós passamos um parâmetro para o componente de navegação dizendo em qual página o usuário está.
