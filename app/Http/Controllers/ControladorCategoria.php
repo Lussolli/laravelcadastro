@@ -61,7 +61,11 @@ class ControladorCategoria extends Controller
      */
     public function edit($id)
     {
-        //
+        $categoria = Categoria::find($id);
+        if (isset($categoria)) {
+            return view('categorias.editar', compact('categoria'));
+        }
+        return redirect('/categorias');
     }
 
     /**
@@ -73,7 +77,12 @@ class ControladorCategoria extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $categoria = Categoria::find($id);
+        if (isset($categoria)) {
+            $categoria->nome = $request->input('nomeCategoria');
+            $categoria->save();
+        }
+        return redirect('/categorias');
     }
 
     /**
