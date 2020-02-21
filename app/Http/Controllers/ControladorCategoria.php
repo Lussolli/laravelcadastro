@@ -84,6 +84,10 @@ class ControladorCategoria extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categoria = Categoria::find($id);
+        if (isset($categoria)) {
+            $categoria->delete();
+        }
+        return redirect('/categorias');
     }
 }
