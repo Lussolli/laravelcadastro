@@ -14,7 +14,8 @@ class ControladorCategoria extends Controller
      */
     public function index()
     {
-        return view('categorias.index');
+        $itens = Categoria::all();
+        return view('categorias.index', compact('itens'));
     }
 
     /**
@@ -38,6 +39,7 @@ class ControladorCategoria extends Controller
         $categoria = new Categoria();
         $categoria->nome = $request->input('nomeCategoria');
         $categoria->save();
+        return redirect('/categorias');
     }
 
     /**
