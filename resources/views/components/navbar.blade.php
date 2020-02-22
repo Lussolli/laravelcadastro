@@ -15,6 +15,9 @@
             <li class="nav-item {{ ($current == 'categorias') ? 'active' : '' }}">
                 <a class="nav-link" href="/categorias">Categorias</a>
             </li>
+            <li class="nav-item {{ ($current == 'api') ? 'active' : '' }}">
+                <a href="/produtosapi" class="nav-link">API</a>
+            </li>
         </ul>
     </div>
 </nav>

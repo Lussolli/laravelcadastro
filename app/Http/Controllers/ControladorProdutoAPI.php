@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Categoria;
 
-class ControladorCategoria extends Controller
+class ControladorProdutoAPI extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class ControladorCategoria extends Controller
      */
     public function index()
     {
-        $itens = Categoria::all();
-        return view('categorias.index', compact('itens'));
+        return view('produtosApi.index');
     }
 
     /**
@@ -25,7 +23,7 @@ class ControladorCategoria extends Controller
      */
     public function create()
     {
-        return view('categorias.novacategoria');
+        //
     }
 
     /**
@@ -36,10 +34,7 @@ class ControladorCategoria extends Controller
      */
     public function store(Request $request)
     {
-        $categoria = new Categoria();
-        $categoria->nome = $request->input('nomeCategoria');
-        $categoria->save();
-        return redirect('/categorias');
+        //
     }
 
     /**
@@ -61,11 +56,7 @@ class ControladorCategoria extends Controller
      */
     public function edit($id)
     {
-        $categoria = Categoria::find($id);
-        if (isset($categoria)) {
-            return view('categorias.editar', compact('categoria'));
-        }
-        return redirect('/categorias');
+        //
     }
 
     /**
@@ -77,12 +68,7 @@ class ControladorCategoria extends Controller
      */
     public function update(Request $request, $id)
     {
-        $categoria = Categoria::find($id);
-        if (isset($categoria)) {
-            $categoria->nome = $request->input('nomeCategoria');
-            $categoria->save();
-        }
-        return redirect('/categorias');
+        //
     }
 
     /**
@@ -93,15 +79,6 @@ class ControladorCategoria extends Controller
      */
     public function destroy($id)
     {
-        $categoria = Categoria::find($id);
-        if (isset($categoria)) {
-            $categoria->delete();
-        }
-        return redirect('/categorias');
-    }
-
-    public function indexJson() {
-        $categorias = Categoria::all();
-        return json_encode($categorias);
+        //
     }
 }
