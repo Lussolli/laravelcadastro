@@ -70,3 +70,24 @@ Os métodos de `index` já estão retornando suas views.
 ## Oitava aula
 
 Nessa aula nós passamos um parâmetro para o componente de navegação dizendo em qual página o usuário está.
+
+
+## Nona aula
+
+Nessa aula nós criamos o formulário de cadastro de categorias.
+
+## Décima aula
+
+O professor ensinou como listar todas as categorias na página inicial.
+
+## Décima primeira aula
+
+A partir dessa aula nós conseguimos deletar registros de categorias.
+
+## Décima segunda aula
+
+Nessa aula aprendemos como editar as categorias cadastradas.
+
+## Décima terceira aula
+
+Conclusão do projeto. O professor pediu para utilizarmos o que aprendemos para realizar o CRUD de produtos.
