@@ -32,4 +32,4 @@ Route::get('/categorias/editar/{id}', 'ControladorCategoria@edit');
 Route::post('/categorias/{id}', 'ControladorCategoria@update');
 
 // API de produtos
-Route::get('/produtosapi', 'ControladorProdutoAPI@index');
+Route::get('/produtosapi', 'ControladorProdutoAPI@indexView');

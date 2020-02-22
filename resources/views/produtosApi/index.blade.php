@@ -3,7 +3,7 @@
 <div class="card border">
     <div class="card-body">
         <h5 class="card-title">Produtos</h5>
-        <table class="table table-ordered table-hover">
+        <table class="table table-ordered table-hover" id="tabelaProdutos">
             <thead>
                 <tr>
                     <th>Código</th>
@@ -88,8 +88,33 @@
         });
     }
 
+    function carregarProdutos() {
+        $.getJSON('/api/produtos', function(produtos) {
+            for (var i = 0; i < produtos.length; i++) {
+                linha = montarLinha(produtos[i]);
+                $('#tabelaProdutos > tbody').append(linha);
+            }
+        });
+    }
+
+    function montarLinha(produto) {
+        var linha = '<tr>';
+        linha += '<td>' + produto.id + '</td>';
+        linha += '<td>' + produto.nome + '</td>';
+        linha += '<td>' + produto.estoque + '</td>';
+        linha += '<td>' + produto.preco + '</td>';
+        linha += '<td>' + produto.categoria_id + '</td>';
+        linha += '<td>';
+        linha += '<button class="btn btn-sm btn-primary">Editar</button> ';
+        linha += '<button class="btn btn-sm btn-danger">Apagar</button>';
+        linha += '</td>';
+        linha += '</tr>';
+        return linha;
+    }
+
     $(function() {
         carregarCategorias();
+        carregarProdutos();
     });
 </script>
 @endsection

@@ -3,9 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Produto;
 
 class ControladorProdutoAPI extends Controller
 {
+    public function indexView()
+    {
+        return view('produtosApi.index');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +19,8 @@ class ControladorProdutoAPI extends Controller
      */
     public function index()
     {
-        return view('produtosApi.index');
+        $produtos = Produto::all();
+        return $produtos->toJson();
     }
 
     /**
