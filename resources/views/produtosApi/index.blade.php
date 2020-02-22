@@ -94,6 +94,17 @@
         });
     }
 
+    function editar(id) {
+        $.getJSON('/api/produtos/' + id, function(produto) {
+            $('#idProduto').val(produto.id);
+            $('#nomeProduto').val(produto.nome);
+            $('#quantidadeProduto').val(produto.estoque);
+            $('#precoProduto').val(produto.preco);
+            $('#categoriaProduto').val(produto.categoria_id);
+            $('#modalProdutos').modal('show');
+        });
+    }
+
     function remover(id) {
         $.ajax({
             type: 'DELETE',
@@ -138,22 +149,62 @@
     }
 
     function criarProduto() {
-        return {
+        let produto = {
             nome: $('#nomeProduto').val(),
             estoque: $('#quantidadeProduto').val(),
             preco: $('#precoProduto').val(),
             categoria_id: $('#categoriaProduto').val()
         };
-    }
 
-    $('#formProduto').submit(function(event) {
-        event.preventDefault();
-        let produto = criarProduto();
         $.post('/api/produtos', produto, function(resposta) {
             $('#modalProdutos').modal('hide');
             let linha = montarLinha(JSON.parse(resposta));
             $('#tabelaProdutos > tbody').append(linha);
         });
+    }
+
+    function editarProduto() {
+        let produto = {
+            id: $('#idProduto').val(),
+            nome: $('#nomeProduto').val(),
+            estoque: $('#quantidadeProduto').val(),
+            preco: $('#precoProduto').val(),
+            categoria_id: $('#categoriaProduto').val()
+        };
+
+        $.ajax({
+            type: 'PUT',
+            url: '/api/produtos/' + produto.id,
+            data: produto,
+            context: this,
+            success: function(data) {
+                data = JSON.parse(data);
+                let linhas = $('#tabelaProdutos > tbody > tr');
+                let elemento = linhas.filter(function(i, elemento) {
+                    return elemento.cells[0].textContent == data.id;
+                });
+
+                if (elemento) {
+                    elemento[0].cells[0].textContent = data.id;
+                    elemento[0].cells[1].textContent = data.nome;
+                    elemento[0].cells[2].textContent = data.estoque;
+                    elemento[0].cells[3].textContent = data.preco;
+                    elemento[0].cells[4].textContent = data.categoria_id;
+                }
+            },
+            error: function(error) {
+                console.error(error);
+            }
+        })
+    }
+
+    $('#formProduto').submit(function(event) {
+        event.preventDefault();
+        if ($('#idProduto').val() != '') {
+            editarProduto();
+        } else {
+            criarProduto();
+        }
     });
 
     $(function() {
