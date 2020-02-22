@@ -41,7 +41,13 @@ class ControladorProdutoAPI extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $produto = new Produto();
+        $produto->nome = $request->input('nome');
+        $produto->estoque = $request->input('estoque');
+        $produto->preco = $request->input('preco');
+        $produto->categoria_id = $request->input('categoria_id');
+        $produto->save();
+        return json_encode($produto);
     }
 
     /**
