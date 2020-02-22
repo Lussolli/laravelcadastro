@@ -81,7 +81,7 @@ class ControladorProdutoAPI extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**
@@ -92,6 +92,11 @@ class ControladorProdutoAPI extends Controller
      */
     public function destroy($id)
     {
-        //
+        $produto = Produto::find($id);
+        if (isset($produto)) {
+            $produto->delete();
+            return response('OK', 200);
+        }
+        return response('Produto não encontrado!', 404);
     }
 }

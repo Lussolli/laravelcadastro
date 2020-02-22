@@ -94,6 +94,25 @@
         });
     }
 
+    function remover(id) {
+        $.ajax({
+            type: 'DELETE',
+            url: '/api/produtos/' + id,
+            context: this,
+            success: function() {
+                let linhas = $('#tabelaProdutos > tbody > tr');
+                let elemento = linhas.filter(function(i, elemento) {
+                    return elemento.cells[0].textContent == id;
+                });
+                if (elemento)
+                    elemento.remove();
+            },
+            error: function(error) {
+                console.error(error);
+            }
+        })
+    }
+
     function carregarProdutos() {
         $.getJSON('/api/produtos', function(produtos) {
             for (var i = 0; i < produtos.length; i++) {
@@ -111,8 +130,8 @@
         linha += '<td>' + produto.preco + '</td>';
         linha += '<td>' + produto.categoria_id + '</td>';
         linha += '<td>';
-        linha += '<button class="btn btn-sm btn-primary">Editar</button> ';
-        linha += '<button class="btn btn-sm btn-danger">Apagar</button>';
+        linha += '<button class="btn btn-sm btn-primary" onclick="editar(' + produto.id + ')">Editar</button> ';
+        linha += '<button class="btn btn-sm btn-danger" onclick="remover(' + produto.id + ')">Apagar</button>';
         linha += '</td>';
         linha += '</tr>';
         return linha;
